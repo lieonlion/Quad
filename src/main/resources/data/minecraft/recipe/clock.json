@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": {
+      "tag": "c:ingots/gold"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    " G ",
+    "GRG",
+    " G "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:clock"
+  }
+}
