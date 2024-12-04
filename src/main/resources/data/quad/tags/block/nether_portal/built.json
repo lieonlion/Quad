@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#quad:nether_portal/formed",
+      "required": false
+    },
+    "minecraft:obsidian",
+    "minecraft:crying_obsidian"
+  ]
+}
