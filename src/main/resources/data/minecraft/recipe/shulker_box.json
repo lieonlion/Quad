@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "tag": "c:chests/wooden"
-    },
-    "-": {
-      "item": "minecraft:shulker_shell"
-    }
+    "#": "#c:chests/wooden",
+    "-": "minecraft:shulker_shell"
   },
   "pattern": [
     "-",

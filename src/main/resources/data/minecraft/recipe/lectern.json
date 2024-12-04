@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "B": {
-      "tag": "c:bookshelves"
-    },
-    "S": {
-      "tag": "minecraft:wooden_slabs"
-    }
+    "B": "#c:bookshelves",
+    "S": "#minecraft:wooden_slabs"
   },
   "pattern": [
     "SSS",

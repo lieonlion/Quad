@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "R": {
-      "item": "minecraft:redstone_torch"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    },
-    "I": {
-      "tag": "c:ingots/iron"
-    }
+    "R": "minecraft:redstone_torch",
+    "S": "minecraft:stick",
+    "I": "#c:ingots/iron"
   },
   "pattern": [
     "ISI",

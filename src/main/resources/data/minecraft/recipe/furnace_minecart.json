@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "c:player_workstations/furnaces"
-    },
-    {
-      "item": "minecraft:minecart"
-    }
+    "#c:player_workstations/furnaces",
+    "minecraft:minecart"
   ],
   "result": {
     "count": 1,

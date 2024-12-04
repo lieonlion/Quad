@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "G": {
-      "tag": "c:ingots/gold"
-    },
-    "R": {
-      "item": "minecraft:redstone"
-    }
+    "G": "#c:ingots/gold",
+    "R": "minecraft:redstone"
   },
   "pattern": [
     " G ",

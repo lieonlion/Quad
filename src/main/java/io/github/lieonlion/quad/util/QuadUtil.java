@@ -60,14 +60,6 @@ public class QuadUtil {
         return hasEquipmentFromTag(QuadItemTags.PROTECTS_FROM_BURNS, living);
     }
 
-    public static boolean hasPiglinPacifier(LivingEntity living) {
-        return hasEquipmentFromTag(QuadItemTags.PACIFIER_PIGLIN, living);
-    }
-
-    public static boolean hasEndermanPacifier(LivingEntity living) {
-        return hasEquipmentFromTag(QuadItemTags.PACIFIER_ENDERMAN, living);
-    }
-
     public static boolean hasSnowBoots(LivingEntity living) {
         return hasEquipmentFromTag(QuadItemTags.SNOW_BOOTS, living);
     }

@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "G": {
-      "item": "minecraft:glass"
-    },
-    "A": {
-      "tag": "c:gems/amethyst"
-    }
+    "G": "minecraft:glass",
+    "A": "#c:gems/amethyst"
   },
   "pattern": [
     " A ",

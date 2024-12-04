@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "A": {
-      "tag": "c:gems/amethyst"
-    },
-    "C": {
-      "tag": "c:ingots/copper"
-    }
+    "A": "#c:gems/amethyst",
+    "C": "#c:ingots/copper"
   },
   "pattern": [
     "A",
