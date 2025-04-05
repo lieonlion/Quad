@@ -28,8 +28,7 @@ public abstract class TntBlockMixin {
 
     @ModifyReturnValue(method = "useItemOn", at = @At(value = "RETURN"))
     private InteractionResult applyTagFireLighters(InteractionResult original, ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-        if (QuadUtil.isFireLighter(stack)) {
-            prime(level, pos, player);
+        if (QuadUtil.isFireLighter(stack) && prime(level, pos, player)) {
             level.setBlock(pos, Blocks.AIR.defaultBlockState(), 11);
             QuadUtil.usedFireLighter(level, pos, player, hand, stack);
             return InteractionResult.SUCCESS_SERVER;
