@@ -7,6 +7,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -39,8 +41,8 @@ public class QuadUtil {
     }
 
     public static boolean hasEquipmentFromTag(TagKey<Item> itemTagKey, LivingEntity living) {
-        for (ItemStack stack : living.getArmorSlots()) {
-            if (stack.is(itemTagKey)) {
+        for (EquipmentSlot slot : EquipmentSlotGroup.ARMOR) {
+            if (living.getItemBySlot(slot).is(itemTagKey)) {
                 return true;
             }
         } return false;

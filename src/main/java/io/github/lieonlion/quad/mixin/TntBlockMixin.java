@@ -22,12 +22,11 @@ import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(value = TntBlock.class, priority = 1004)
 public abstract class TntBlockMixin {
-    @Shadow public abstract void onCaughtFire(BlockState state, Level world, BlockPos pos, @Nullable Direction face, @Nullable LivingEntity igniter);
+    @Shadow public abstract boolean onCaughtFire(BlockState state, Level world, BlockPos pos, @Nullable Direction face, @Nullable LivingEntity igniter);
 
     @ModifyReturnValue(method = "useItemOn", at = @At(value = "RETURN"))
     private InteractionResult applyTagFireLighters(InteractionResult original, ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if (QuadUtil.isFireLighter(stack)) {
-            this.onCaughtFire(state, level, pos, hit.getDirection(), player);
+        if (QuadUtil.isFireLighter(stack) && onCaughtFire(state, level, pos, hit.getDirection(), player)) {
             level.setBlock(pos, Blocks.AIR.defaultBlockState(), 11);
             QuadUtil.usedFireLighter(level, state, pos, player, hand, stack);
             return InteractionResult.SUCCESS_SERVER;
