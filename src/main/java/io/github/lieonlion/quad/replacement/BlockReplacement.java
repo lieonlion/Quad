@@ -22,18 +22,20 @@ public class BlockReplacement {
     private static Structure structure;
 
     public static BlockState getBlockReplacement(ServerLevelAccessor accessor, BlockState state) {
-        if (state.isAir()) return state;
+//        if (state.isAir()) return state;
+//
+//        Registry<Structure> structureRegistry = accessor.registryAccess().registryOrThrow(Registries.STRUCTURE);
+//        List<BlockReplacementRecord> structureEntry = REPLACEMENT.get(Objects.requireNonNull(structureRegistry.getKey(structure)).toString());
+//
+//        if (structureEntry.isEmpty()) {
+//            REPLACEMENT.keySet().stream().filter(blockReplacementRecords -> blockReplacementRecords.startsWith("#")).forEach(s -> {
+//                if (structureRegistry.getHolder(structureRegistry.getKey(structure)).get().is(TagKey.create(Registries.STRUCTURE, ResourceLocation.tryParse(s)))) {
+//                    return REPLACEMENT.get("#" + s);
+//                }
+//            });
+//        }
 
-        Registry<Structure> structureRegistry = accessor.registryAccess().registryOrThrow(Registries.STRUCTURE);
-        List<BlockReplacementRecord> structureEntry = REPLACEMENT.get(Objects.requireNonNull(structureRegistry.getKey(structure)).toString());
-
-        if (structureEntry.isEmpty()) {
-            REPLACEMENT.keySet().stream().filter(blockReplacementRecords -> blockReplacementRecords.startsWith("#")).forEach(s -> {
-                if (structureRegistry.getHolder(structureRegistry.getKey(structure)).get().is(TagKey.create(Registries.STRUCTURE, ResourceLocation.tryParse(s)))) {
-                    return REPLACEMENT.get("#" + s)
-                }
-            });
-        }
+        return state;
 
 
 //        Optional<ResourceLocation> structureOptional = accessor.registryAccess().registry(Registries.STRUCTURE).map(it -> it.getKey(structure));
