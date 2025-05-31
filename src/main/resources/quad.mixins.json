@@ -23,6 +23,7 @@
     "PortalShapeMixin",
     "PowderedSnowBlockMixin",
     "RespawnAnchorBlockMixin",
+    "TagLoaderMixin",
     "TntBlockMixin",
     "WolfMixin"
   ],
