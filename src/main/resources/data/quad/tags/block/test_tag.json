@@ -1,0 +1,13 @@
+{
+  "values": [
+    "#minecraft:planks",
+    {
+      "id": "#quad:nether_planks",
+      "exclude": true
+    },
+    {
+      "id": "minecraft:acacia_planks",
+      "exclude": true
+    }
+  ]
+}
