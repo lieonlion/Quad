@@ -1,18 +1,16 @@
 package io.github.lieonlion.quad;
 
 import io.github.lieonlion.quad.registry.QuadFuelRegistry;
-import io.github.lieonlion.quad.resource.BlockReplacementResource;
+import io.github.lieonlion.quad.replacement.BlockReplacementResource;
 import io.github.lieonlion.quad.tags.QuadItemTags;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.CommonLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
-import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.world.entity.item.ItemEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

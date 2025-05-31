@@ -1,4 +1,4 @@
-{
+{replaceBlockState
   "required": true,
   "package": "io.github.lieonlion.quad.mixin",
   "compatibilityLevel": "JAVA_21",
@@ -24,7 +24,10 @@
     "PowderedSnowBlockMixin",
     "RespawnAnchorBlockMixin",
     "TntBlockMixin",
-    "WolfMixin"
+    "WolfMixin",
+    "generation.StructurePieceMixin",
+    "generation.StructureStartMixin",
+    "generation.StructureTemplateMixin"
   ],
   "injectors": {
     "defaultRequire": 1

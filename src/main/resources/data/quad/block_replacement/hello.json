@@ -1,0 +1,6 @@
+{
+  "blocks": [
+    "minecraft:dirt",
+    "#quad:nether_portal/built"
+  ]
+}
