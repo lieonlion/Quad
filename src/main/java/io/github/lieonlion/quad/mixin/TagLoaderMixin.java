@@ -33,7 +33,7 @@ public class TagLoaderMixin {
     @Unique Map<ResourceLocation, Set<TagKey<Item>>> quad$parentTagToExcludedItemTags = Maps.newHashMap();
     @Shadow @Final private static Logger LOGGER;
 
-    @Inject(method = "load", at = @At(value = "INVOKE", target = "Lcom/google/gson/JsonParser;parseReader(Ljava/io/Reader;)Lcom/google/gson/JsonElement;", shift = At.Shift.BY, by = 2))
+    @Inject(method = "load", at = @At(value = "INVOKE", target = "Ljava/util/Map;computeIfAbsent(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;"))
     private void injectedLoad(ResourceManager resourceManager, CallbackInfoReturnable<Map<ResourceLocation, List<TagLoader.EntryWithSource>>> cir, @Local(ordinal = 0) ResourceLocation resourceLocation, @Local(ordinal = 0) JsonElement jsonElement) {
 
         jsonElement.getAsJsonObject().get("values").getAsJsonArray().forEach(tagEntry -> { if(tagEntry.isJsonObject())
