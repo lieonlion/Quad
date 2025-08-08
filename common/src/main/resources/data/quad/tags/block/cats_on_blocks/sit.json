@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:furnace",
+    "minecraft:chest",
+    {
+      "id": "#lolmcv:more_chest",
+      "required": false
+    },
+    {
+      "id": "#lolmfv:more_furnace",
+      "required": false
+    },
+    {
+      "id": "lootr:lootr_chest",
+      "required": false
+    }
+  ]
+}

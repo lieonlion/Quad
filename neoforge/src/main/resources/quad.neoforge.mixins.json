@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.lieonlion.quad.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "NeoBaseFireBlockMixin",
+    "NeoConduitBlockEntityMixin",
+    "NeoTntBlockMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

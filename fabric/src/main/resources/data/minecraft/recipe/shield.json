@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:not" ,
+      "value": {
+        "condition": "fabric:all_mods_loaded" ,
+        "values": [
+          "lolmsv"
+        ]
+      }
+    }
+  ],
+  "category": "equipment",
+  "key": {
+    "P": "#minecraft:planks",
+    "I": "#c:ingots/iron"
+  },
+  "pattern": [
+    "PIP",
+    "PPP",
+    " P "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:shield"
+  }
+}

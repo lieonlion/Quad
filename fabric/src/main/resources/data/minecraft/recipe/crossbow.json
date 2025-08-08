@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": "minecraft:stick",
+    "T": "minecraft:tripwire_hook",
+    "I": "#c:ingots/iron",
+    "s": "minecraft:string"
+  },
+  "pattern": [
+    "SIS",
+    "sTs",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:crossbow"
+  }
+}

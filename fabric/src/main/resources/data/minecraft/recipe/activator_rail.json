@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:not" ,
+      "value": {
+        "condition": "fabric:all_mods_loaded" ,
+        "values": [
+          "mstv-base"
+        ]
+      }
+    }
+  ],
+  "category": "misc",
+  "key": {
+    "R": "minecraft:redstone_torch",
+    "S": "minecraft:stick",
+    "I": "#c:ingots/iron"
+  },
+  "pattern": [
+    "ISI",
+    "IRI",
+    "ISI"
+  ],
+  "result": {
+    "count": 6,
+    "id": "minecraft:activator_rail"
+  }
+}
