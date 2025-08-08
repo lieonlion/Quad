@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "A": "#c:gems/amethyst",
+    "S": "minecraft:sculk_sensor"
+  },
+  "pattern": [
+    " A ",
+    "ASA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:calibrated_sculk_sensor"
+  }
+}

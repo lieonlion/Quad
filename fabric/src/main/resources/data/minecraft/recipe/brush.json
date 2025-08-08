@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:not" ,
+      "value": {
+        "condition": "fabric:all_mods_loaded" ,
+        "values": [
+          "mstv-base"
+        ]
+      }
+    }
+  ],
+  "category": "equipment",
+  "key": {
+    "C": "#c:ingots/copper",
+    "S": "minecraft:stick",
+    "F": "minecraft:feather"
+  },
+  "pattern": [
+    "F",
+    "C",
+    "S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:brush"
+  }
+}

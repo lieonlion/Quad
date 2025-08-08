@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:not" ,
+      "value": {
+        "condition": "fabric:all_mods_loaded" ,
+        "values": [
+          "mstv-base"
+        ]
+      }
+    }
+  ],
+  "category": "misc",
+  "key": {
+    "S": "minecraft:stick",
+    "R": "minecraft:redstone",
+    "G": "#c:ingots/gold"
+  },
+  "pattern": [
+    "G G",
+    "GSG",
+    "GRG"
+  ],
+  "result": {
+    "count": 6,
+    "id": "minecraft:powered_rail"
+  }
+}
