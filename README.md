@@ -26,7 +26,7 @@
 
 [Wiki](https://lieonlion.github.io/quad-docs/)
 
-## MultiLoader - Minecraft 1.21.6
+## MultiLoader - Minecraft 1.21.4
 
 ### Supported Loaders
 
