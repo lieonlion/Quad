@@ -10,6 +10,7 @@ public class QuadBlockTags {
     public static final TagKey<Block> CATS_ON_BLOCKS_LIE = create("cats_on_blocks/lie");
 
     public static final TagKey<Block> NETHER_PORTAL_BUILT = create("nether_portal/built");
+    @Deprecated
     public static final TagKey<Block> NETHER_PORTAL_FORMED = create("nether_portal/formed");
 
     public static final TagKey<Block> CONDUIT_BASE_BLOCKS = create("conduit_base_blocks");

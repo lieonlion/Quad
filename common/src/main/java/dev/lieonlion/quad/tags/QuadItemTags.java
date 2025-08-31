@@ -20,9 +20,13 @@ public class QuadItemTags {
     public static final TagKey<Item> FUEL_CARPET = create("fuel/carpet"); //67
     public static final TagKey<Item> FUEL_BAMBOO = create("fuel/bamboo"); //50
 
+    @Deprecated
     public static final TagKey<Item> IMMUNE_CACTUS = create("immune/cactus");
+    @Deprecated
     public static final TagKey<Item> IMMUNE_EXPLOSION = create("immune/explosion");
+    @Deprecated
     public static final TagKey<Item> IMMUNE_FIRE = create("immune/fire");
+    @Deprecated
     public static final TagKey<Item> IMMUNE_LIGHTNING = create("immune/lightning");
 
     public static final TagKey<Item> PROTECTS_FROM_BURNS = create("protects_from/burns");
@@ -38,6 +42,7 @@ public class QuadItemTags {
     public static final TagKey<Item> NEVER_DESPAWN = create("never_despawn");
     public static final TagKey<Item> NO_GRAVITY = create("no_gravity");
     public static final TagKey<Item> IRON_GOLEM_HEALER = create("iron_golem_healer");
+    @Deprecated
     public static final TagKey<Item> FIRE_LIGHTER = create("fire_lighter");
     public static final TagKey<Item> RESPAWN_ANCHOR_CHARGER = create("respawn_anchor_charger");
 
