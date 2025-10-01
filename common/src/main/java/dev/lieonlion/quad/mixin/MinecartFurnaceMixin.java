@@ -17,28 +17,25 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class MinecartFurnaceMixin {
     @Shadow private int fuel;
 
-    @Inject(method = "interact", at = @At(value = "HEAD"))
+    @Inject(method = "interact", at = @At(value = "HEAD"), cancellable = true)
     private void applyAbstractFurnaceFuelItems(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
-        ItemStack itemStack = player.getItemInHand(hand);
-        if (itemStack.isEmpty()) return;
-        int itemFuelTime = ((MinecartFurnace) (Object) this).level().fuelValues().burnDuration(itemStack);
+        ItemStack stack = player.getItemInHand(hand);
+        if (stack.isEmpty()) cir.setReturnValue(InteractionResult.PASS);
+        int itemFuelTime = ((MinecartFurnace) (Object) this).level().fuelValues().burnDuration(stack);
         Quad.LOG.info("[Quad] item has fuel time of: {}", itemFuelTime);
         if (itemFuelTime > 0 && this.fuel + itemFuelTime <= 32000) {
             this.fuel += itemFuelTime;
             if (!player.isCreative()) {
-                ItemStack itemRemainder = itemStack.getItem().getCraftingRemainder();
+                ItemStack itemRemainder = stack.getItem().getCraftingRemainder();
                 if (!itemRemainder.isEmpty()) {
-                    ItemStack itemStack2 = ItemUtils.createFilledResult(itemStack, player, itemRemainder);
+                    ItemStack itemStack2 = ItemUtils.createFilledResult(stack, player, itemRemainder);
                     player.setItemInHand(hand, itemStack2);
                 } else {
-                    itemStack.shrink(1);
+                    stack.shrink(1);
                 }
             }
         } Quad.LOG.info("[Quad] cart fuel: {}", this.fuel);
-    }
 
-    @ModifyExpressionValue(method = "interact", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/tags/TagKey;)Z"))
-    private boolean ignoreVanillaIngredient(boolean original) {
-        return false;
+        cir.setReturnValue(InteractionResult.SUCCESS);
     }
 }

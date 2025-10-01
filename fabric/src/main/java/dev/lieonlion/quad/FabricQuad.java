@@ -14,7 +14,7 @@ public class FabricQuad implements ModInitializer {
         Quad.init();
 
         ServerEntityEvents.ENTITY_LOAD.register((entity, world) -> {
-            if (entity instanceof ItemEntity itemEntity && !world.isClientSide) {
+            if (entity instanceof ItemEntity itemEntity && !world.isClientSide()) {
                 if (itemEntity.getItem().is(QuadItemTags.NEVER_DESPAWN)) {
                     itemEntity.setUnlimitedLifetime();
                 } if (itemEntity.getItem().is(QuadItemTags.NO_GRAVITY)) {

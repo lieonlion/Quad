@@ -35,7 +35,7 @@ public class QuadUtil {
         player.awardStat(Stats.ITEM_USED.get(stack.getItem()));
         if (!stack.is(Items.ENCHANTED_BOOK) && !player.isCreative()) {
             if (stack.isDamageableItem()) {
-                stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
+                stack.hurtAndBreak(1, player, hand);
             } else {
                 stack.shrink(1);
             }
