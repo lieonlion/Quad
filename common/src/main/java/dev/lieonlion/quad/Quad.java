@@ -1,7 +1,7 @@
 package dev.lieonlion.quad;
 
 import dev.lieonlion.quad.platform.Services;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,7 +14,7 @@ public class Quad {
         LOG.info("[Quad] Innitialising the Quad mod power running on {}! >:P", Services.PLATFORM.getPlatformName());
     }
 
-    public static ResourceLocation location(String path) {
-        return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+    public static Identifier location(String path) {
+        return Identifier.fromNamespaceAndPath(MOD_ID, path);
     }
 }

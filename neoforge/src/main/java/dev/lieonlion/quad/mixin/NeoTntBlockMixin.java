@@ -10,12 +10,12 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.TntBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gamerules.GameRules;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -39,7 +39,7 @@ public abstract class NeoTntBlockMixin extends Block {
             if (onCaughtFire(state, level, pos, result.getDirection(), player)) {
                 level.setBlock(pos, Blocks.AIR.defaultBlockState(), 11);
                 QuadUtil.usedFireLighter(level, pos, player, hand, stack);
-            } else if (level instanceof ServerLevel serverLevel && !serverLevel.getGameRules().getBoolean(GameRules.RULE_TNT_EXPLODES)) {
+            } else if (level instanceof ServerLevel serverLevel && !serverLevel.getGameRules().get(GameRules.TNT_EXPLODES)) {
                 player.displayClientMessage(Component.translatable("block.minecraft.tnt.disabled"), true);
                 cir.setReturnValue(InteractionResult.PASS);
             }

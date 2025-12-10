@@ -1,11 +1,10 @@
 package dev.lieonlion.quad.mixin;
 
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import dev.lieonlion.quad.Quad;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.vehicle.MinecartFurnace;
+import net.minecraft.world.entity.vehicle.minecart.MinecartFurnace;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import org.spongepowered.asm.mixin.*;
