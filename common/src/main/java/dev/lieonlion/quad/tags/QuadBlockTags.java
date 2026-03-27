@@ -14,6 +14,8 @@ public class QuadBlockTags {
 
     public static final TagKey<Block> CONDUIT_BASE_BLOCKS = create("conduit_base_blocks");
 
+  public static final TagKey<Block> COPPER_GOLEM_ITEM_DESTINATION = create("copper_golem_item_destination");
+
     private static TagKey<Block> create(String name) {
         return TagKey.create(Registries.BLOCK, Quad.location(name));
     }

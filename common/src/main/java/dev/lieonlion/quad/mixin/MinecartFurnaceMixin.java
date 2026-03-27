@@ -1,40 +1,35 @@
 package dev.lieonlion.quad.mixin;
 
-import dev.lieonlion.quad.Quad;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.player.Player;
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
 import net.minecraft.world.entity.vehicle.minecart.MinecartFurnace;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemUtils;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = MinecartFurnace.class, priority = 1004)
-public abstract class MinecartFurnaceMixin {
+public abstract class MinecartFurnaceMixin extends AbstractMinecart {
     @Shadow private int fuel;
+    @Shadow public Vec3 push;
 
-    @Inject(method = "interact", at = @At(value = "HEAD"), cancellable = true)
-    private void applyAbstractFurnaceFuelItems(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
-        ItemStack stack = player.getItemInHand(hand);
-        if (stack.isEmpty()) cir.setReturnValue(InteractionResult.PASS);
-        int itemFuelTime = ((MinecartFurnace) (Object) this).level().fuelValues().burnDuration(stack);
-        Quad.LOG.info("[Quad] item has fuel time of: {}", itemFuelTime);
+    public MinecartFurnaceMixin(EntityType<?> entityType, Level level) {
+        super(entityType, level);
+    }
+
+    @ModifyReturnValue(method = "addFuel", at = @At(value = "RETURN"))
+    private boolean applyAbstractFurnaceFuelItems(boolean original, Vec3 playerPosition, ItemStack stack) {
+        if (stack.isEmpty()) return false;
+        int itemFuelTime = level().fuelValues().burnDuration(stack);
         if (itemFuelTime > 0 && this.fuel + itemFuelTime <= 32000) {
             this.fuel += itemFuelTime;
-            if (!player.isCreative()) {
-                ItemStack itemRemainder = stack.getItem().getCraftingRemainder();
-                if (!itemRemainder.isEmpty()) {
-                    ItemStack itemStack2 = ItemUtils.createFilledResult(stack, player, itemRemainder);
-                    player.setItemInHand(hand, itemStack2);
-                } else {
-                    stack.shrink(1);
-                }
-            }
-        } Quad.LOG.info("[Quad] cart fuel: {}", this.fuel);
 
-        cir.setReturnValue(InteractionResult.SUCCESS);
+            if (this.fuel > 0) {
+              this.push = this.position().subtract(playerPosition).horizontal();
+            }
+            return true;
+        } return false;
     }
 }
