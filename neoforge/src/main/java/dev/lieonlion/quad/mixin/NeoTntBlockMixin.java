@@ -40,7 +40,7 @@ public abstract class NeoTntBlockMixin extends Block {
                 level.setBlock(pos, Blocks.AIR.defaultBlockState(), 11);
                 QuadUtil.usedFireLighter(level, pos, player, hand, stack);
             } else if (level instanceof ServerLevel serverLevel && !serverLevel.getGameRules().get(GameRules.TNT_EXPLODES)) {
-                player.displayClientMessage(Component.translatable("block.minecraft.tnt.disabled"), true);
+                player.sendOverlayMessage(Component.translatable("block.minecraft.tnt.disabled"));
                 cir.setReturnValue(InteractionResult.PASS);
             }
             cir.setReturnValue(InteractionResult.SUCCESS);

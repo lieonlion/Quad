@@ -2,12 +2,12 @@ package dev.lieonlion.quad.registry;
 
 import dev.lieonlion.quad.Quad;
 import dev.lieonlion.quad.tags.QuadItemTags;
-import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
+import net.fabricmc.fabric.api.registry.FuelValueEvents;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.entity.FuelValues;
 
 public class FabricQuadFuelRegistry {
-    public static void registerQuadFuelItems(FuelValues.Builder builder, FuelRegistryEvents.Context context) {
+    public static void registerQuadFuelItems(FuelValues.Builder builder, FuelValueEvents.Context context) {
         int i = context.baseSmeltTime();
         builder.add(QuadItemTags.FUEL_BAMBOO, i / 4)
                 .add(QuadItemTags.FUEL_CARPET, 1 + i / 3)
